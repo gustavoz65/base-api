@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    // "rootDir": "src",  // Remova ou comente esta linha
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["*"]
+    },
+    "baseUrl": "src"
+  },
+  "include": ["src/**/*"]
+}
