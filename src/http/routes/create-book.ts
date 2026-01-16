@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { prisma } from "../lib/prisma.js";
+import { Prisma } from "../lib/prisma";
 
 export async function createBookroute(app: FastifyInstance) {
   app.post("/books", async (request, reply) => {
@@ -12,7 +12,7 @@ export async function createBookroute(app: FastifyInstance) {
 
     const { title, author, description } = createBoockBody.parse(request.body);
 
-    const book = await prisma.book.create({
+    const book = await Prisma.book.create({
       data: {
         title,
         author,

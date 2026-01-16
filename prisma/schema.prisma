@@ -16,8 +16,8 @@ model Book {
   isFavorite  Boolean  @default(false)
   isReading   Boolean  @default(false)
   published   Boolean  @default(false)
-  userId      String   @db.Char(36)
-  user        User     @relation("UserBooks", fields: [userId], references: [id])
+  userId      String?   @db.Char(36)
+  user        User?     @relation("UserBooks", fields: [userId], references: [id])
 
   @@index([userId])
 }
