@@ -5,6 +5,10 @@ const app = fastify();
 
 app.register(createBookroute);
 
-app.listen({ port: 3000 }).then(() => {
+try {
+  await app.listen({ port: 3000 });
   console.log("Server is running on ");
-});
+} catch (err) {
+  console.error("Error starting server:", err);
+  process.exit(1);
+}
